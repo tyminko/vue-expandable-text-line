@@ -32,21 +32,10 @@ export default {
       }
     },
 
-    mouseOver (e) {
-      if (this.useHover) {
-        this.enter(e)
-      }
-    },
-    mouseLeave (e) {
-      if (this.useHover) {
-        this.leave(e)
-      }
-    },
-
     enter (e) {
       const el = e.target
       let { width, height } = getComputedStyle(el)
-      this.minHeight = height
+      const minHeight = height
 
       el.style.width = width
       el.style.position = `absolute`
@@ -60,10 +49,9 @@ export default {
       el.style.position = null
       el.style.visibility = null
       el.style.whiteSpace = null
-      el.style.height = this.minHeight
+      el.style.height = minHeight
 
-      // Force repaint to make sure the
-      // animation is triggered correctly.
+      // Force repaint to make sure the animation is triggered correctly.
       // eslint-disable-next-line no-unused-expressions
       getComputedStyle(el).height
       setTimeout(() => {
@@ -91,8 +79,6 @@ export default {
       el.style.whiteSpace = whiteSpace
       el.style.height = maxHeight
 
-      // Force repaint to make sure the
-      // animation is triggered correctly.
       // eslint-disable-next-line no-unused-expressions
       getComputedStyle(el).height
       setTimeout(() => {
