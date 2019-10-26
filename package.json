@@ -1,7 +1,8 @@
 {
   "name": "vue-expandable-text-line",
   "version": "1.0.3",
-  "description": "A simple Vue.js component, which clips a long text into a single line with … (ellipsis) on the end, and expands it (with transition) to the full length on `mouseover` or `click`.",
+  "private": false,
+  "description": "A simple Vue.js component, which clips a long text into a single line with … (ellipsis), and expands it (with transition) to it's full length on `mouseover` or `click`.",
   "main": "dist/expandable-text-line.umd.js",
   "module": "dist/expandable-text-line.esm.js",
   "unpkg": "dist/expandable-text-line.min.js",
@@ -12,20 +13,24 @@
     "build": "npm run build:umd & npm run build:es & npm run build:unpkg",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/expandable-text-line.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/expandable-text-line.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/expandable-text-line.min.js"
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/expandable-text-line.min.js",
+    "serve": "vue-cli-service serve",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.3.2",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "rollup": "^1.17.0",
-    "rollup-plugin-buble": "^0.19.8",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-vue": "^5.1.0",
-    "vue": "^2.6.10",
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.10"
   },
   "repository": {
@@ -42,8 +47,5 @@
   "bugs": {
     "url": "https://github.com/tyminko/vue-expandable-text-line/issues"
   },
-  "homepage": "https://github.com/tyminko/vue-expandable-text-line#readme",
-  "dependencies": {
-    "sass-loader": "^8.0.0"
-  }
+  "homepage": "https://github.com/tyminko/vue-expandable-text-line#readme"
 }
