@@ -28,7 +28,8 @@
   },
   "keywords": [
     "vue.js",
-    "component"
+    "component",
+    "expandable text"
   ],
   "author": "Maxim Tyminko",
   "license": "ISC",
