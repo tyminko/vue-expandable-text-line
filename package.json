@@ -1,6 +1,6 @@
 {
   "name": "vue-expandable-text-line",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple Vue.js component, which clips a long text into a single line with … (ellipsis) on the end, and expands it (with transition) to the full length on `mouseover` or `click`.",
   "main": "dist/expandable-text-line.umd.js",
   "module": "dist/expandable-text-line.esm.js",
