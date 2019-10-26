@@ -1,6 +1,6 @@
 {
   "name": "vue-expandable-text-line",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple Vue.js component, which allows toggling text ",
   "main": "index.js",
   "scripts": {
