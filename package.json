@@ -14,14 +14,6 @@
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/expandable-text-line.esm.js",
     "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/expandable-text-line.min.js"
   },
-  "devDependencies": {
-    "rollup": "^1.17.0",
-    "rollup-plugin-buble": "^0.19.8",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-vue": "^5.1.0",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tyminko/vue-expandable-text-line.git"
