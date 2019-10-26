@@ -93,7 +93,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style>
   .expandable-text-line {
     white-space: nowrap;
     text-overflow: ellipsis;

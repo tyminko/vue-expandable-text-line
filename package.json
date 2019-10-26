@@ -1,0 +1,23 @@
+{
+  "name": "vue-expandable-text-line",
+  "version": "1.0.0",
+  "description": "A simple Vue.js component, which allows toggling text ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyminko/vue-expandable-text-line.git"
+  },
+  "keywords": [
+    "vue.js",
+    "component"
+  ],
+  "author": "Maxim Tyminko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tyminko/vue-expandable-text-line/issues"
+  },
+  "homepage": "https://github.com/tyminko/vue-expandable-text-line#readme"
+}
