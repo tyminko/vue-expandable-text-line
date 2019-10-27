@@ -1,28 +1,32 @@
 // Import vue component
+// @ts-ignore
 import component from './ExpandableTextLine.vue'
 
 // Declare install function executed by Vue.use()
-export function install(Vue) {
-	if (install.installed) return;
-	install.installed = true;
-	Vue.component('ExpandableTextLine', component);
+export function install (Vue) {
+  // @ts-ignore
+  if (install.installed) return
+  // @ts-ignore
+  install.installed = true
+  Vue.component('ExpandableTextLine', component)
 }
 
 // Create module definition for Vue.use()
 const plugin = {
-	install,
+  install
 }
 
 // Auto-install when vue is found (eg. in browser via <script> tag)
 let GlobalVue = null
 if (typeof window !== 'undefined') {
-	GlobalVue = window.Vue
+  GlobalVue = window.Vue
 } else if (typeof global !== 'undefined') {
-	GlobalVue = global.Vue
+  // @ts-ignore
+  GlobalVue = global.Vue
 }
 if (GlobalVue) {
-	GlobalVue.use(plugin)
+  GlobalVue.use(plugin)
 }
 
 // To allow use as module (npm/webpack/etc.) export component
-export default component;
+export default component
