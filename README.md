@@ -45,7 +45,7 @@ If you would like to do this on `click` instead, you can pass a `use-click` prop
  
 
 #### CSS
-The component has only functional css. In order to style it you can add your own class or a `style` tag:
+The component has only functional css. In order to style it you can add your own class or a `style` attribute:
 ```html
 <expandable-text-line class="whatever-class-name">
   <!--Your text or html goes here-->
