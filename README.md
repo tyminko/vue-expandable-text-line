@@ -2,6 +2,8 @@
 
 A simple **Vue** component that clips a long text into a single line with `…` (ellipsis), and expands it with a transition to it's full length on `mouseover` or `click`.
 
+<img src="https://user-images.githubusercontent.com/32540212/67645977-09cfc780-f92c-11e9-8d50-298444165b32.png" width="614" height="284">
+
 #### Demo
 [Live demo on Codesandbox](https://codesandbox.io/s/vue-template-xrmpg?fontsize=14)
 
