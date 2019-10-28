@@ -146,7 +146,14 @@ export default {
   }
 }
 </script>
-
+<style scoped>
+* {
+  will-change: height;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+</style>
 <style lang="scss">
   $blocks: p, h1, h2, h3, h4, h5, h6, ol, ul, pre, address, blockquote, dl, div, fieldset, form, hr, noscript, table;
   @mixin all-blocks {
