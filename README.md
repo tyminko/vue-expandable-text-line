@@ -12,6 +12,10 @@ A simple **Vue** component that clips a long text (or html) into a single line w
 ```
 $ npm i vue-expandable-text-line
 ```
+or
+```
+$ yarn add vue-expandable-text-line
+```
 
 ## Usage
 
