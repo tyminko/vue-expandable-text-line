@@ -1,4 +1,4 @@
-# vue-expandable-text-line
+# vue-expandable-text-line  &nbsp;[![Build Status](https://travis-ci.com/tyminko/vue-expandable-text-line.svg?branch=master)](https://travis-ci.com/tyminko/vue-expandable-text-line)
 
 A simple **Vue** component that clips a long text (or html) into a single line with `…` (ellipsis), and expands it with a transition to it's full length on `mouseover` or `click`.
 
