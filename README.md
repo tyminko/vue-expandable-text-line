@@ -4,7 +4,7 @@ A simple **Vue** component that clips a long text (or html) into a single line w
 
 <img src="https://user-images.githubusercontent.com/32540212/67645977-09cfc780-f92c-11e9-8d50-298444165b32.png" width="614" height="auto">
 
-#### Demo
+## Demo
 [Live demo on Codesandbox](https://codesandbox.io/embed/vue-template-xrmpg?codemirror=1&fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.vue&view=preview)
 
 ## Installation
