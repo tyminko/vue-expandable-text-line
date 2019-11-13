@@ -55,3 +55,8 @@ The component has only functional css. In order to style it you can add your own
   <!--Your text or html goes here-->
 </expandable-text-line>
 ```
+```fiff
+- Important Note:
+``` 
+**Parent Width**: 
+In order for the line to be properly clipped, you need to specify an explicit *width* of the `parent`. 
