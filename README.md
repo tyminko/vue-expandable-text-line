@@ -55,8 +55,23 @@ The component has only functional css. In order to style it you can add your own
   <!--Your text or html goes here-->
 </expandable-text-line>
 ```
-```fiff
-- Important Note:
-``` 
-**Parent Width**: 
-In order for the line to be properly clipped, you need to specify an explicit *width* of the `parent`. 
+![#f03c15](https://placehold.it/15/ffff00/ffffff?text=+) *Note:*
+
+***Width**:* In order for the component to be able to properly clip it's contained text, 
+the ExpandableTextLine element or it's parent should have an **explicit width** (i.e. set in `px`, `em` etc., but not in `%`). 
+If you don't set it explicitly, then the maximum width of the collapsed line will be set on-the-fly to match the natural dimensions in the expanded state. 
+This will work most of the time correctly, however can potentially have an effect on the performance during window resize.
+
+***Height**:* If you would like that an expanded line with a very long text or html to become scrollable within the height of the parent container, then you have two options:
+ 1. You can specify an **explicit height** of the parent. Then the expanded line will be automatically clipped to the height of the parent and become scrollable.
+ 2. Or you can add `owerflow: auto` to the parent (or grandparent) container that determines the maximum height.
+
+*For instance:*
+```html
+<div style="width: 400px; height: 400px">
+  <expandable-text-line>
+    <!--Your text or html goes here-->
+    <!--It will be properly clipped within the 400px width & when expand, will become scrollable withing 400px height-->
+  </expandable-text-line>
+</div>
+```
