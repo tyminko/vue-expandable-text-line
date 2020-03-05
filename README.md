@@ -45,6 +45,7 @@ If you would like to do this on `click` instead, you can pass a `use-click` prop
 | | | |
 | --- | --- | --- 
 | **use-click** | *Boolean* | Whether to use `click` or `hover` to trigger the transition. Default **false** i.e. expands on `hover`  
+| **force-expand** | *Boolean* | If true, keeps the text line expanded. Setting it to false returns the component to it's normal behaviour. Default **false** 
 | **duration** | *Number* | Duration of the transition in seconds. Default **0.2**
  
 

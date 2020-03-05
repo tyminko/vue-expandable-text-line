@@ -13,6 +13,7 @@ export default {
 
   props: {
     useClick: Boolean,
+    forceExpand: Boolean,
     duration: { type: Number, default: 0.2 },
     collapseTextOnLeaveRatio: { type: Number, default: 1 }
   },
@@ -44,7 +45,7 @@ export default {
   },
 
   methods: {
-    click (e) {
+    click () {
       const el = this.$refs['text-line']
       if (!el.classList.contains(this.expandedClass)) {
         this.expand()
@@ -67,6 +68,7 @@ export default {
     },
 
     collapse () {
+      if (this.forceExpand) return
       const el = this.$refs['text-line']
       const dimensions = this.dimensionsForCollapse(el)
       setTimeout(() => {
@@ -197,6 +199,7 @@ export default {
     },
 
     leaveOnClickOutside (event) {
+      if (this.forceExpand) return
       const el = this.$refs['text-line']
       if (!el) return
       if (!el.contains(event.target) &&
