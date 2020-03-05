@@ -57,6 +57,7 @@ export default {
     expand () {
       /** @type HTMLElement */
       const el = this.$refs['text-line']
+      if (this.forceExpand && el.classList.contains(this.expandedClass)) return
       const dimensions = this.dimensionsForExpand(el)
       clearTimeout(this.timeoutOnCollapse)
       setTimeout(() => {
