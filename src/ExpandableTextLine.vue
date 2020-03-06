@@ -22,6 +22,7 @@ export default {
     return {
       expandedClass: '__extl-expanded',
       timeoutOnCollapse: null,
+      timeoutOnExpand: null,
       touch: false,
       initialH: null,
       initialW: null
@@ -60,18 +61,20 @@ export default {
       if (this.forceExpand && el.classList.contains(this.expandedClass)) return
       const dimensions = this.dimensionsForExpand(el)
       clearTimeout(this.timeoutOnCollapse)
-      setTimeout(() => {
-        el.style.height = dimensions.expandHeight
-        el.style.whiteSpace = 'unset'
-        el.classList.add(this.expandedClass)
-        this.$emit('start-expand')
-      })
+      el.style.height = dimensions.expandHeight
+      el.style.whiteSpace = 'unset'
+      el.classList.add(this.expandedClass)
+      this.$emit('start-expand')
+      this.timeoutOnExpand = setTimeout(() => {
+        el.style.height = 'auto'
+      }, this.duration * 1000)
     },
 
     collapse () {
       if (this.forceExpand) return
       const el = this.$refs['text-line']
       const dimensions = this.dimensionsForCollapse(el)
+      clearTimeout(this.timeoutOnExpand)
       setTimeout(() => {
         el.style.height = dimensions.collapseHeight
         el.scroll({ top: 0, behavior: 'smooth' })
