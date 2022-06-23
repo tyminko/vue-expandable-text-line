@@ -1,8 +1,9 @@
 <template>
-  <div ref="text-line"
-       class="expandable-text-line"
-       :style="style"
-       v-on="shouldHover ? { mouseenter: expand, mouseleave: collapse } : { click }">
+  <div
+    ref="text-line"
+    class="expandable-text-line"
+    :style="style"
+    v-on="shouldHover ? { mouseenter: expand, mouseleave: collapse } : { click }">
     <slot />
   </div>
 </template>
@@ -25,7 +26,8 @@ export default {
       timeoutOnExpand: null,
       touch: false,
       initialH: null,
-      initialW: null
+      initialW: null,
+      expanded: false
     }
   },
 
@@ -58,12 +60,14 @@ export default {
     expand () {
       /** @type HTMLElement */
       const el = this.$refs['text-line']
-      if (this.forceExpand && el.classList.contains(this.expandedClass)) return
+      if (!this.needsExpand(el) && !this.forceExpand) { return }
+      if (this.forceExpand && el.classList.contains(this.expandedClass)) { return }
       const dimensions = this.dimensionsForExpand(el)
       clearTimeout(this.timeoutOnCollapse)
       el.style.height = dimensions.expandHeight
       el.style.whiteSpace = 'unset'
       el.classList.add(this.expandedClass)
+      this.expanded = true
       this.$emit('start-expand')
       this.timeoutOnExpand = setTimeout(() => {
         el.style.height = 'auto'
@@ -71,7 +75,8 @@ export default {
     },
 
     collapse () {
-      if (this.forceExpand) return
+      if (!this.expanded) { return }
+      if (this.forceExpand) { return }
       const el = this.$refs['text-line']
       const dimensions = this.dimensionsForCollapse(el)
       clearTimeout(this.timeoutOnExpand)
@@ -84,8 +89,13 @@ export default {
           el.classList.remove(this.expandedClass)
           el.scrollTop = 0
           el.style.height = null
+          this.expanded = false
         }, this.duration * 1000 * this.collapseTextOnLeaveRatio)
       })
+    },
+
+    needsExpand (el) {
+      return el.offsetWidth < el.scrollWidth
     },
 
     /**
